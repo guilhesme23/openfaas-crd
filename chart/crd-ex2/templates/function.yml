@@ -1,0 +1,17 @@
+---
+apiVersion: openfaas.com/v1
+kind: Function
+metadata:
+  name: crd-ex2
+  namespace: {{ .Values.app.namespace }}
+spec:
+  name: crd-ex2
+  image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+  imagePullPolicy: {{ .Values.image.pullPolicy }}
+  environment:
+    combine_output: {{ .Values.environment.combine_output | quote }}
+    read_timeout: {{ .Values.environment.read_timeout }}
+    var1: {{ .Values.environment.var1 }}
+    var2: {{ .Values.environment.var2 }}
+    write_timeout: {{ .Values.environment.write_timeout }}
+

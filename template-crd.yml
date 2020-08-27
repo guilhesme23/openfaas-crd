@@ -6,7 +6,8 @@ metadata:
   namespace: openfaas
 spec:
   name: crd-ex2
-  image: guilhesme/crd-ex2:latest
+  image: guilhesme/crd-ex2:3
+  imagePullPolicy: Always
   environment:
     combine_output: "false"
     read_timeout: 240s
