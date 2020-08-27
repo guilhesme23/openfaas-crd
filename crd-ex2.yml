@@ -1,0 +1,16 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://192.168.0.81:31112
+functions:
+  crd-ex2:
+    lang: python3
+    handler: ./crd-ex2
+    image: guilhesme/crd-ex2:3
+    environment:
+      combine_output: false
+      read_timeout: 240s
+      write_timeout: 240s
+      var1: hello
+      var2: world
+

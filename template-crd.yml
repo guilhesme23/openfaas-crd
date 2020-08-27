@@ -1,0 +1,16 @@
+---
+apiVersion: openfaas.com/v1
+kind: Function
+metadata:
+  name: crd-ex2
+  namespace: openfaas
+spec:
+  name: crd-ex2
+  image: guilhesme/crd-ex2:latest
+  environment:
+    combine_output: "false"
+    read_timeout: 240s
+    var1: hello
+    var2: world
+    write_timeout: 240s
+
